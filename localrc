@@ -1,3 +1,6 @@
+# Update the repos when ./stack.sh is run
+RECLONE=yes
+
 # Good ol' "password" passwords ... for development only of course
 ADMIN_PASSWORD=password
 MYSQL_PASSWORD=password
@@ -15,3 +18,120 @@ HOST_IP_IFACE=eth1
 FLAT_INTERFACE=br100
 PUBLIC_INTERFACE=eth1
 FLOATING_RANGE=192.168.33.0/24
+
+# Swift is not enable by default?
+enable_service swift
+SWIFT_HASH=66a3d6b56c1f479c8b4e70ab5c2000f5
+SWIFT_REPLICAS=1
+
+# Use MySQL and not that hellchild MongoDB
+CEILOMETER_BACKEND=mysql
+
+# Enable the ceilometer metering services
+enable_service ceilometer-acompute,ceilometer-acentral,ceilometer-collector
+
+# Enable the ceilometer alarming services
+enable_service ceilometer-alarm-evaluator,ceilometer-alarm-notifier
+
+# Enable the ceilometer api services
+enable_service ceilometer-api
+
+# Keep everything on the stable/havana branch
+BRANCH=stable/havana
+
+# metering service
+CEILOMETER_BRANCH=$BRANCH
+
+# ceilometer client library
+CEILOMETERCLIENT_BRANCH=$BRANCH
+
+# volume service
+CINDER_BRANCH=$BRANCH
+
+# volume client
+CINDERCLIENT_BRANCH=$BRANCH
+
+# image catalog service
+GLANCE_BRANCH=$BRANCH
+
+# python glance client library
+GLANCECLIENT_BRANCH=$BRANCH
+
+# heat service
+HEAT_BRANCH=$BRANCH
+
+# python heat client library
+HEATCLIENT_BRANCH=$BRANCH
+
+# django powered web control panel for openstack
+HORIZON_BRANCH=$BRANCH
+
+# baremetal provisionint service
+IRONIC_BRANCH=$BRANCH
+
+# unified auth system (manages accounts/tokens)
+KEYSTONE_BRANCH=$BRANCH
+
+# python keystone client library to nova that horizon uses
+KEYSTONECLIENT_BRANCH=$BRANCH
+
+# compute service
+NOVA_BRANCH=$BRANCH
+
+# python client library to nova that horizon (and others) use
+NOVACLIENT_BRANCH=$BRANCH
+
+# consolidated openstack python client
+OPENSTACKCLIENT_BRANCH=$BRANCH
+
+# oslo.config
+OSLOCFG_BRANCH=$BRANCH
+
+# oslo.messaging
+OSLOMSG_BRANCH=$BRANCH
+
+# pbr drives the setuptools configs
+PBR_BRANCH=$BRANCH
+
+# neutron service
+NEUTRON_BRANCH=$BRANCH
+
+# neutron client
+NEUTRONCLIENT_BRANCH=$BRANCH
+
+# consolidated openstack requirements
+REQUIREMENTS_BRANCH=$BRANCH
+
+# storage service
+SWIFT_BRANCH=$BRANCH
+SWIFT3_BRANCH=$BRANCH
+
+# python swift client library
+SWIFTCLIENT_BRANCH=$BRANCH
+
+# Tempest test suite
+TEMPEST_BRANCH=$BRANCH
+
+
+# diskimage-builder
+BM_IMAGE_BUILD_BRANCH=$BRANCH
+
+# bm_poseur
+# Used to simulate a hardware environment for baremetal
+# Only used if BM_USE_FAKE_ENV is set
+BM_POSEUR_BRANCH=$BRANCH
+
+# a websockets/html5 or flash powered VNC console for vm instances
+NOVNC_BRANCH=$BRANCH
+
+# ryu service
+RYU_BRANCH=$BRANCH
+
+# a websockets/html5 or flash powered SPICE console for vm instances
+SPICE_BRANCH=$BRANCH
+
+# trove service
+TROVE_BRANCH=$BRANCH
+
+# trove client library test
+TROVECLIENT_BRANCH=$BRANCH
