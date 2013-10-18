@@ -12,6 +12,8 @@ http://devstack.org/localrc.html
 
 So you want to install devstack on a VM in your machine?  These instructions are the basics for getting up and running on a Mac with VirtualBox and Vagrant.
 
+N.B. Every Mac developer should install Homebrew (http://brew.sh/).  This is similar to aptitude on Ubuntu and is the package manager you should use to install most things (except vagrant ironically).
+
 1. http://www.vagrantup.com/ - this has instructions for installing Vagrant on Mac
 1. Clone https://github.com/kili/devstack-conf/tree/master to a folder (I have a folder ~/dev/ for stuff like this)
 1. From within that folder, type `vagrant up`
