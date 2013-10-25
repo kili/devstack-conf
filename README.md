@@ -20,7 +20,9 @@ N.B. Every Mac developer should install Homebrew (http://brew.sh/).  This is sim
 1. It will probably prompt you to download a new box as defined by the VagrantFile you just downloaded. In this case it's precise64
 1. You will also want to install the latest and greatest VirtualBox as well or you can also use VMWare
 1. Type `vagrant ssh` to ssh into the new machine you just created
-1. Now install devstack from within the Ubuntu box (http://devstack.org/guides/single-vm.html) and ignore the localrc modifications in those instructions
-1. Use the localrc file from the devstack-conf repository in step 2 above
-1. Type `./stack.sh` to launch the stack
+1. Now install devstack from within the Ubuntu box (http://devstack.org/) by:
+  1. Installing git `sudo aptitude install git`
+  2. Clone the repo `git clone https://github.com/openstack-dev/devstack.git`
+  3. Copy [our localrc file](localrc) to the localrc file now in `devstack/`
+1. Get into `devstack/` and execute `./stack.sh` to launch the stack
 1. http://192.168.33.10 should be the address at which the Horizon dashboard is available from your web browser.
